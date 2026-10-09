@@ -1,0 +1,52 @@
+{
+  "id": "kim-petras",
+  "name": "Kim Petras",
+  "style": {
+    "cel": true,
+    "outline": true
+  },
+  "proportions": {
+    "build": "slim",
+    "head": 1.25
+  },
+  "skin": "#f3d9c4",
+  "face": {
+    "eyes": "#5a6a8a",
+    "eye_style": "almond",
+    "mouth": "#c94a5a",
+    "blush": "#f0b0b0"
+  },
+  "hair": {
+    "style": "mh:long01",
+    "length": "hips",
+    "color": "#f0e2b4",
+    "shade": "#d6c393",
+    "bangs": "parted",
+    "locks": true
+  },
+  "outfit": {
+    "type": "polo_skirt",
+    "primary": "#f4f2ee",
+    "secondary": "#4f6fa3",
+    "accent": "#1b1b22",
+    "print": "#f2b6cc",
+    "buckle": "#2a4fd6",
+    "sleeves": "short"
+  },
+  "boots": {
+    "color": "#c9a06a",
+    "height": "heel"
+  },
+  "accessories": [
+    "shoulder_bag",
+    "bracelets"
+  ],
+  "accessory_colors": {
+    "shoulder_bag": "#eadfc3",
+    "bracelets": "#e05a8a"
+  },
+  "prop": {
+    "type": "none"
+  },
+  "pose": "relaxed"
+}

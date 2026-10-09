@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "example-vi",
+  "kind": "character",
+  "status": "catalog-only",
+  "provenance": {
+    "pipeline": "generated",
+    "source": ".claude/skills/character-3d/specs/example-vi.json",
+    "engine": "base",
+    "baseMesh": "MakeHuman hm08 base.obj + default rig/weights (CC0)",
+    "referenceImage": null
+  },
+  "files": {
+    "sourceModel": "public/assets/characters/example-vi/example-vi.glb",
+    "mainModel": "public/assets/characters/example-vi/example-vi.glb",
+    "runtimeModel": null,
+    "catalogPng": "public/units/example-vi/portrait.png",
+    "views": {
+      "portrait": "public/units/example-vi/portrait.png",
+      "board": "public/units/example-vi/board.png",
+      "front": "public/units/example-vi/front.png",
+      "back": "public/units/example-vi/back.png",
+      "east": "public/units/example-vi/east.png",
+      "west": "public/units/example-vi/west.png"
+    }
+  },
+  "budget": {
+    "runtimeTriangles": 36252,
+    "runtimeBytes": 631708,
+    "materials": 59,
+    "textures": 0,
+    "skinnedMeshes": 0,
+    "bones": 163
+  },
+  "rig": {
+    "skeletonId": "makehuman-default-v1",
+    "rootBone": "root",
+    "actorHeightUnits": 3.51,
+    "actorHeightMeters": 2.012,
+    "upAxis": "Y",
+    "forwardAxis": "+Z",
+    "maxSkinInfluences": 4,
+    "sockets": [
+      {
+        "role": "root",
+        "name": "root"
+      },
+      {
+        "role": "hips",
+        "name": "root"
+      },
+      {
+        "role": "head",
+        "name": "head"
+      },
+      {
+        "role": "left-hand",
+        "name": "wrist.L"
+      },
+      {
+        "role": "right-hand",
+        "name": "wrist.R"
+      },
+      {
+        "role": "back",
+        "name": "spine01"
+      },
+      {
+        "role": "left-foot",
+        "name": "foot.L"
+      },
+      {
+        "role": "right-foot",
+        "name": "foot.R"
+      }
+    ]
+  },
+  "pose": "brace",
+  "actions": [],
+  "equipment": {
+    "separateFromMainModel": true,
+    "slots": [
+      {
+        "id": "headgear",
+        "supported": false,
+        "asset": null,
+        "socket": "head",
+        "parts": []
+      },
+      {
+        "id": "vestment",
+        "supported": true,
+        "asset": "public/assets/characters/example-vi/example-vi.glb#vestment",
+        "socket": "skeleton",
+        "parts": [
+          "jacket",
+          "shirt",
+          "lapel_-1",
+          "lapel_1",
+          "belt_1.94",
+          "sleeve_L",
+          "sleeve_R"
+        ]
+      },
+      {
+        "id": "gloves",
+        "supported": true,
+        "asset": "public/assets/characters/example-vi/example-vi.glb#gloves",
+        "socket": "skeleton",
+        "parts": [
+          "gauntlet_L",
+          "gauntlet_cuff_L",
+          "knuckle_L_0",
+          "knuckle_L_1",
+          "knuckle_L_2",
+          "knuckle_L_3",
+          "gauntlet_R",
+          "gauntlet_cuff_R",
+          "knuckle_R_0",
+          "knuckle_R_1",
+          "knuckle_R_2",
+          "knuckle_R_3"
+        ]
+      },
+      {
+        "id": "leggings",
+        "supported": true,
+        "asset": "public/assets/characters/example-vi/example-vi.glb#leggings",
+        "socket": "skeleton",
+        "parts": [
+          "pants_thigh_L",
+          "pants_shin_L",
+          "pants_thigh_R",
+          "pants_shin_R",
+          "pants_hips",
+          "pouch",
+          "kneepad_L",
+          "kneepad_R"
+        ]
+      },
+      {
+        "id": "boots",
+        "supported": true,
+        "asset": "public/assets/characters/example-vi/example-vi.glb#boots",
+        "socket": "skeleton",
+        "parts": [
+          "boot_L",
+          "shoe_L",
+          "sole_L",
+          "boot_R",
+          "shoe_R",
+          "sole_R"
+        ]
+      },
+      {
+        "id": "main-hand",
+        "supported": false,
+        "asset": null,
+        "socket": "right-hand",
+        "parts": []
+      },
+      {
+        "id": "offhand",
+        "supported": false,
+        "asset": null,
+        "socket": "left-hand",
+        "parts": []
+      },
+      {
+        "id": "back-ranged",
+        "supported": false,
+        "asset": null,
+        "socket": null
+      }
+    ]
+  },
+  "collision": {
+    "navigation": {
+      "shape": "capsule",
+      "radius": 0.35,
+      "height": 3.51
+    },
+    "hurtboxes": [
+      {
+        "id": "body",
+        "shape": "capsule",
+        "socket": "hips"
+      }
+    ]
+  },
+  "catalog": {
+    "cardImage": "public/units/example-vi/portrait.png",
+    "inspectorRoute": null,
+    "cardCanvasCount": 0,
+    "inspectorCanvasCount": 0,
+    "controls": []
+  },
+  "verification": {
+    "focusedTests": false,
+    "build": false,
+    "lint": false,
+    "fullTestsRun": false,
+    "browserProof": false,
+    "commit": null
+  },
+  "notes": "Static renders for a 2D board: no animation clips, so build-rigged-game-assets' runtime gates (actions, inspector) are intentionally unmet and status stays catalog-only. Each GLB node is one named part so equipment layers can be toggled by name."
+}

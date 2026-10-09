@@ -1,0 +1,87 @@
+{
+  "id": "unit-id-used-for-folders",
+  "name": "Display Name",
+  "style": {
+    "cel": true,
+    "outline": true
+  },
+  "proportions": {
+    "preset": "hero | chibi",
+    "build": "slim | average | athletic | heavy",
+    "head": 1.0
+  },
+  "skin": "#f5dccb",
+  "face": {
+    "eyes": "#3a3a54",
+    "eye_style": "almond | round",
+    "mouth": "#b5776e",
+    "blush": "#f2b5b0 or null",
+    "jaw": "soft | square",
+    "expression": "neutral | stern"
+  },
+  "hair": {
+    "style": "mh:long01 | mh:bob02 | mh:ponytail01 (MakeHuman assets, preferred) | long | bob | pixie | ponytail | twintails | bun | curly | spiky | mohawk | slick | bald",
+    "color": "#hex",
+    "shade": "#hex (optional)", "streak": "#hex under-layer/tips colour (optional)",
+    "bangs": "true | false | parted",
+    "length": "shoulder | chest | waist | hips (long only)",
+    "locks": true,
+    "tie": "#hex"
+  },
+  "outfit": {
+    "type": "dress | tunic | armor | robe | vest | suit | jacket_skirt | jacket_pants | crop_top | tee_skirt | tee_pants | polo_skirt | polo_pants",
+    "primary": "#hex (top)",
+    "secondary": "#hex (skirt/pants)",
+    "accent": "#hex (belt/trim/lapels)",
+    "shirt": "#hex (vest/suit shirt)",
+    "sleeves": "none | short | long",
+    "legwear": "true to draw trousers in secondary (default for pants types, suit, armor, tunic)",
+    "pattern": "stripes | null",
+    "pattern_color": "#hex",
+    "print": "#hex chest print",
+    "buckle": "#hex (skirt belts)",
+    "pleats": "0 or a count e.g. 12",
+    "length": "knee | long (dress)",
+    "hood": false
+  },
+  "boots": {
+    "color": "#hex",
+    "height": "ankle | knee | heel"
+  },
+  "accessories": [
+    "cape",
+    "hood_down",
+    "crown",
+    "horns",
+    "cat_ears",
+    "elf_ears",
+    "glasses",
+    "sunglasses",
+    "goggles",
+    "scarf",
+    "wings",
+    "halo",
+    "headband",
+    "earrings",
+    "shoulder_bag",
+    "collar",
+    "bracelets",
+    "necklace",
+    "gauntlets",
+    "knee_pads",
+    "belt_pouch"
+  ],
+  "accessory_colors": {
+    "cape": "#hex",
+    "sunglasses": "#lens",
+    "sunglasses_frame": "#hex",
+    "gauntlets": "#hex",
+    "gauntlets_trim": "#hex"
+  },
+  "prop": {
+    "type": "none | sword | dagger | staff | wand | bow | shield | guitar | mic | book",
+    "color": "#hex",
+    "accent": "#hex"
+  },
+  "pose": "relaxed | idle | ready | hand_on_hip | cast | brace  — or an object of bone rotations {\"upper_arm_R\": [rx, ry, rz], ...}"
+}

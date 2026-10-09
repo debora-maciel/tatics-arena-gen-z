@@ -1,0 +1,55 @@
+{
+  "id": "kesha",
+  "name": "Kesha",
+  "reference": "kesha selfie: blonde waves with blue under-layer, black crop tee with gold logo, leopard shorts, fishnets, fishnet gloves, blue lips",
+  "style": {
+    "cel": true,
+    "outline": true
+  },
+  "proportions": {
+    "build": "slim",
+    "head": 1.25
+  },
+  "skin": "#f3d9c4",
+  "face": {
+    "eyes": "#5a7aa0",
+    "eye_style": "almond",
+    "mouth": "#4fa3e0",
+    "blush": "#f0b0b0"
+  },
+  "hair": {
+    "style": "mh:long01",
+    "length": "chest",
+    "color": "#e6cf96",
+    "shade": "#c9ad6c",
+    "streak": "#28b7e6",
+    "bangs": "parted",
+    "locks": true
+  },
+  "outfit": {
+    "type": "crop_shorts",
+    "primary": "#141216",
+    "secondary": "#c9a04a",
+    "accent": "#141216",
+    "print": "#d4a83a",
+    "bottom_pattern": "leopard",
+    "pattern_color": "#3a2412",
+    "sleeves": "short",
+    "tights": "fishnet",
+    "legwear": false
+  },
+  "boots": {
+    "color": "#141216",
+    "height": "ankle"
+  },
+  "accessories": [
+    "fishnet_gloves"
+  ],
+  "accessory_colors": {
+    "fishnet_gloves": "#141216"
+  },
+  "prop": {
+    "type": "none"
+  },
+  "pose": "hand_on_hip"
+}

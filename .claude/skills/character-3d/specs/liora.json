@@ -1,0 +1,43 @@
+{
+  "id": "liora",
+  "name": "Liora",
+  "style": {
+    "cel": true,
+    "outline": true
+  },
+  "skin": "#f5dccb",
+  "face": {
+    "eyes": "#3a3a54",
+    "eye_style": "round",
+    "mouth": "#b5776e",
+    "blush": "#f2b5b0"
+  },
+  "hair": {
+    "style": "long",
+    "color": "#f4f6fa",
+    "shade": "#e6eaf1",
+    "bangs": true,
+    "locks": true
+  },
+  "outfit": {
+    "type": "dress",
+    "primary": "#141418",
+    "secondary": "#2d2d36",
+    "accent": "#c9a86a",
+    "sleeves": "long",
+    "length": "knee"
+  },
+  "boots": {
+    "color": "#141418",
+    "height": "ankle"
+  },
+  "accessories": [],
+  "prop": {
+    "type": "none"
+  },
+  "pose": "idle",
+  "proportions": {
+    "preset": "chibi",
+    "build": "average"
+  }
+}

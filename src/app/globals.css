@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Shared button style. */
+.btn {
+  @apply inline-flex items-center justify-center gap-1 rounded-lg border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs font-semibold text-slate-100 transition;
+}
+.btn:enabled:hover {
+  @apply border-slate-500 bg-slate-700/80;
+}
+.btn:disabled {
+  @apply cursor-not-allowed opacity-40;
+}
+
+/* ── Perspective arena ──
+   The arena plane leans back around the X axis; everything that should look like it stands on
+   the ground (units, bars) counter-rotates with `.stand`. Every element between the plane and a
+   standing sprite needs `.p3d`, otherwise the browser flattens the 3D context. */
+.arena-tilted {
+  transform: perspective(1100px) rotateX(var(--tilt));
+  transform-origin: 50% 55%;
+  transform-style: preserve-3d;
+}
+.p3d {
+  transform-style: preserve-3d;
+}
+.stand {
+  transform: rotateX(calc(-1 * var(--tilt)));
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+}
+/* Flat view: nothing stands up, so the plate simply fills its cell and the sprite sits centred
+   (otherwise the top half would poke above the cell and get clipped at the arena edge). */
+.arena-flat .stand {
+  bottom: 0;
+  justify-content: center;
+}
+
+/* Pointy-top hexagon, used for trait badges. */
+.hex {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+/* While dragging a unit, hover cards stay hidden so they don't follow the cursor. */
+.is-dragging [role="tooltip"] {
+  display: none !important;
+}
+
+/* ── Bench walkway: stone slabs with a lit top ledge and a shadowed curb. ── */
+.bench {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 2px), rgba(0, 0, 0, 0.22) calc(12.5% - 2px) 12.5%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0 3px, transparent 3px),
+    linear-gradient(180deg, #9a9082 0%, #7d7466 55%, #5e564b 100%);
+  box-shadow: inset 0 -10px 16px -8px rgba(0, 0, 0, 0.55);
+}
+/* Feet on the ledge: in the flat view the figure stands on the walkway and grows upward over the board edge. */
+.arena-flat .bench-slot .stand {
+  bottom: 14%;
+  height: auto;
+  justify-content: flex-end;
+}
+.bench-slot:hover { z-index: 1; }
+
+/* Selected unit: a white outline hugging the character's silhouette, plus a soft glow.
+   Four 1px drop-shadows trace the alpha edge, so it works on transparent PNGs and emoji alike. */
+.art-selected {
+  filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+}
+
+/* ── Combat animations. Each plays once when its wrapper is remounted (see Fighter in Arena.tsx). ── */
+
+/* Gentle breathing while standing. */
+@keyframes idle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-2px) scale(1.03); }
+}
+.animate-idle { animation: idle 1.6s ease-in-out infinite; }
+
+/* Lunge toward the target on each attack; --lx/--ly are set per facing. */
+@keyframes lunge {
+  0% { transform: translate(0, 0); }
+  35% { transform: translate(var(--lx), var(--ly)) scale(1.08); }
+  100% { transform: translate(0, 0); }
+}
+.animate-lunge { animation: lunge 0.28s ease-out; }
+
+/* White flash and shake when taking damage. */
+@keyframes hit {
+  0% { filter: brightness(1); transform: translateX(0); }
+  30% { filter: brightness(2.6) saturate(0.2); transform: translateX(-2px); }
+  60% { filter: brightness(1.4); transform: translateX(2px); }
+  100% { filter: brightness(1); transform: translateX(0); }
+}
+.animate-hit { animation: hit 0.25s ease-out; }
+
+/* Small hop each time the unit steps to a new cell. */
+@keyframes hop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+.animate-hop { animation: hop 0.3s ease-out; }
+
+/* Golden ring when a unit casts its ability. */
+@keyframes cast {
+  0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.9); opacity: 1; }
+  60% { box-shadow: 0 0 20px 8px rgba(250, 204, 21, 0.45); opacity: 1; }
+  100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); opacity: 0; }
+}
+.animate-cast { animation: cast 0.45s ease-out forwards; }
+
+/* Shrink and fade on defeat. */
+@keyframes die {
+  to { opacity: 0; transform: scale(0.5) rotate(10deg); }
+}
+.animate-die { animation: die 0.45s ease-in forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-idle, .animate-lunge, .animate-hit, .animate-hop, .animate-cast { animation: none; }
+  .animate-die { animation-duration: 0.01ms; }
+  * { transition-duration: 0ms !important; }
+}

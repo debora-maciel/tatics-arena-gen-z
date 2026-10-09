@@ -1,0 +1,50 @@
+{
+  "id": "example-ember-knight",
+  "name": "Ember Knight",
+  "style": {
+    "cel": true,
+    "outline": true
+  },
+  "skin": "#e8c39e",
+  "face": {
+    "eyes": "#5a2a12",
+    "eye_style": "almond",
+    "mouth": "#a5564a",
+    "blush": null,
+    "jaw": "square",
+    "expression": "stern"
+  },
+  "hair": {
+    "style": "spiky",
+    "color": "#d9482b",
+    "shade": "#b2361f",
+    "bangs": false
+  },
+  "outfit": {
+    "type": "armor",
+    "primary": "#3b2a2a",
+    "secondary": "#8c8f96",
+    "accent": "#e2a13c",
+    "sleeves": "long"
+  },
+  "boots": {
+    "color": "#2a1e1e",
+    "height": "knee"
+  },
+  "accessories": [
+    "cape"
+  ],
+  "accessory_colors": {
+    "cape": "#8f1d1d"
+  },
+  "prop": {
+    "type": "sword",
+    "color": "#d7dbe2",
+    "accent": "#e2a13c"
+  },
+  "pose": "ready",
+  "proportions": {
+    "preset": "hero",
+    "build": "athletic"
+  }
+}

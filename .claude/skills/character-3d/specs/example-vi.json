@@ -1,0 +1,15 @@
+{
+  "id": "example-vi",
+  "name": "Vi (Arcane reference)",
+  "style": { "cel": true, "outline": true },
+  "proportions": { "preset": "hero", "build": "athletic" },
+  "skin": "#e9c4a6",
+  "face": { "eyes": "#5aa7c8", "eye_style": "almond", "mouth": "#a85a60", "jaw": "square", "expression": "stern" },
+  "hair": { "style": "spiky", "color": "#e8437a", "shade": "#b82c5c", "bangs": false },
+  "outfit": { "type": "vest", "primary": "#b8262e", "secondary": "#5a5450", "accent": "#e2b25a", "shirt": "#efe8dc", "sleeves": "short", "legwear": true, "pattern": "stripes", "pattern_color": "#2e2a28" },
+  "boots": { "color": "#2a2626", "height": "knee" },
+  "accessories": ["gauntlets", "belt_pouch", "knee_pads"],
+  "accessory_colors": { "gauntlets": "#2f3f78", "gauntlets_trim": "#d8a94a", "belt_pouch": "#4a3227", "knee_pads": "#3f5a4a" },
+  "prop": { "type": "none" },
+  "pose": "brace"
+}

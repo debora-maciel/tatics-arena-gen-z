@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "id": "kim-petras",
+  "kind": "character",
+  "status": "catalog-only",
+  "provenance": {
+    "pipeline": "generated",
+    "source": ".claude/skills/character-3d/specs/kim-petras.json",
+    "engine": "base",
+    "baseMesh": "MakeHuman hm08 base.obj + default rig/weights (CC0)",
+    "referenceImage": null
+  },
+  "files": {
+    "sourceModel": "public/assets/characters/kim-petras/kim-petras.glb",
+    "mainModel": "public/assets/characters/kim-petras/kim-petras.glb",
+    "runtimeModel": null,
+    "catalogPng": "public/units/kim-petras/portrait.png",
+    "views": {
+      "portrait": "public/units/kim-petras/portrait.png",
+      "board": "public/units/kim-petras/board.png",
+      "front": "public/units/kim-petras/front.png",
+      "back": "public/units/kim-petras/back.png",
+      "east": "public/units/kim-petras/east.png",
+      "west": "public/units/kim-petras/west.png"
+    }
+  },
+  "budget": {
+    "runtimeTriangles": 45606,
+    "runtimeBytes": 728240,
+    "materials": 30,
+    "textures": 0,
+    "skinnedMeshes": 0,
+    "bones": 163
+  },
+  "rig": {
+    "skeletonId": "makehuman-default-v1",
+    "rootBone": "root",
+    "actorHeightUnits": 3.459,
+    "actorHeightMeters": 1.983,
+    "upAxis": "Y",
+    "forwardAxis": "+Z",
+    "maxSkinInfluences": 4,
+    "sockets": [
+      {
+        "role": "root",
+        "name": "root"
+      },
+      {
+        "role": "hips",
+        "name": "root"
+      },
+      {
+        "role": "head",
+        "name": "head"
+      },
+      {
+        "role": "left-hand",
+        "name": "wrist.L"
+      },
+      {
+        "role": "right-hand",
+        "name": "wrist.R"
+      },
+      {
+        "role": "back",
+        "name": "spine01"
+      },
+      {
+        "role": "left-foot",
+        "name": "foot.L"
+      },
+      {
+        "role": "right-foot",
+        "name": "foot.R"
+      }
+    ]
+  },
+  "pose": "relaxed",
+  "actions": [],
+  "equipment": {
+    "separateFromMainModel": true,
+    "slots": [
+      {
+        "id": "headgear",
+        "supported": false,
+        "asset": null,
+        "socket": "head",
+        "parts": []
+      },
+      {
+        "id": "vestment",
+        "supported": true,
+        "asset": "public/assets/characters/kim-petras/kim-petras.glb#vestment",
+        "socket": "skeleton",
+        "parts": [
+          "top",
+          "collar_-1",
+          "collar_1",
+          "placket",
+          "belt_1.75",
+          "buckle",
+          "skirt",
+          "sleeve_L",
+          "sleeve_R",
+          "bag_strap",
+          "bag"
+        ]
+      },
+      {
+        "id": "gloves",
+        "supported": true,
+        "asset": "public/assets/characters/kim-petras/kim-petras.glb#gloves",
+        "socket": "skeleton",
+        "parts": [
+          "bracelet_L_0",
+          "bracelet_L_1",
+          "bracelet_R_0",
+          "bracelet_R_1"
+        ]
+      },
+      {
+        "id": "leggings",
+        "supported": false,
+        "asset": null,
+        "socket": "skeleton",
+        "parts": []
+      },
+      {
+        "id": "boots",
+        "supported": true,
+        "asset": "public/assets/characters/kim-petras/kim-petras.glb#boots",
+        "socket": "skeleton",
+        "parts": [
+          "sole_L",
+          "strap_L",
+          "sole_R",
+          "strap_R"
+        ]
+      },
+      {
+        "id": "main-hand",
+        "supported": false,
+        "asset": null,
+        "socket": "right-hand",
+        "parts": []
+      },
+      {
+        "id": "offhand",
+        "supported": false,
+        "asset": null,
+        "socket": "left-hand",
+        "parts": []
+      },
+      {
+        "id": "back-ranged",
+        "supported": false,
+        "asset": null,
+        "socket": null
+      }
+    ]
+  },
+  "collision": {
+    "navigation": {
+      "shape": "capsule",
+      "radius": 0.35,
+      "height": 3.46
+    },
+    "hurtboxes": [
+      {
+        "id": "body",
+        "shape": "capsule",
+        "socket": "hips"
+      }
+    ]
+  },
+  "catalog": {
+    "cardImage": "public/units/kim-petras/portrait.png",
+    "inspectorRoute": null,
+    "cardCanvasCount": 0,
+    "inspectorCanvasCount": 0,
+    "controls": []
+  },
+  "verification": {
+    "focusedTests": false,
+    "build": false,
+    "lint": false,
+    "fullTestsRun": false,
+    "browserProof": false,
+    "commit": null
+  },
+  "notes": "Static renders for a 2D board: no animation clips, so build-rigged-game-assets' runtime gates (actions, inspector) are intentionally unmet and status stays catalog-only. Each GLB node is one named part so equipment layers can be toggled by name."
+}
